@@ -2,9 +2,8 @@
 # Base Conversion 
 # Base 11 to Base 10 for 343
 
-def base_conv(n):
+def base_conv(n,b):
     s = str(n)
-    b = 11
     length = len(s) # size of the input number
     output = 0
     last_digit = n%10 # to get the last digit(10**0 unit)
@@ -16,4 +15,4 @@ def base_conv(n):
         output = output + digit*(b**power)
     return output
 
-base_conv(343) -> 410
+base_conv(343,11) -> 410
