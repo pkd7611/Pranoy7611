@@ -1,0 +1,34 @@
+# t = 0 then l = 10
+# t = 1 then l = 15
+# t = 2 then l = 30
+# t = 3 then l = ?
+# t = 4 then l = ?
+# l = a*(t**2) + b*t + c
+
+def equation_solve():
+    l = [10, 15, 30, 0, 0] 
+    t = [0, 1, 2, 3, 4] 
+    
+    # from mathematical calculation these equations have been found
+    # when t = 0 then c has become 0
+    # a+b = 5 ............ (eq:1)
+    # 2a+b = 10 ...........(eq:2)
+    # From these eq: 1 and 2 I can arrange like below
+    # eqns = [[1,1],[2,1],[5,10]]
+    
+    a1,a2 = [1,1]
+    b1,b2 = [2,1]
+    c1,c2 = [5,10]
+    a = ((c2-c1)//(b1-a1))
+    b =(c1-a)
+    print ("a =", a,"b =", b)
+    i = 0
+    c = l[i] - (a * (t[i] ** 2) + b * t[i])
+    print ("c =", c)
+    while i <=len(t)-1:
+        l[i] = c + (a * (t[i] ** 2) + b * t[i])
+        print(f" when t = ", i ,"then l = ",l[i])
+        i +=1
+
+# to execute the function
+equation_solve()
